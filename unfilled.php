@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "<h3>Body is empty</h3>";
         }
         else{
-    echo "<h3>{$name}, your answer was {$response}</h3>";
+    echo "<h3>{$name}, your post was {$response}</h3>";
         } 
     }
     ?>
