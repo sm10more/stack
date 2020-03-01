@@ -10,9 +10,7 @@
   <div class="container">
      <div class="row">
          <div class="col">
-         <div class="card-body">
-           <a href="/askform.php" class="btn btn-primary">Ask a question</a>
-         </div>
+         
          </div>
          <div class="col-10">
             <?php
@@ -142,7 +140,7 @@
             
         </div>
          <div class="col">
-            
+         <?php include 'postButton.php';?>
          </div>
      </div>
    </div>

@@ -74,14 +74,13 @@ echo "<div class=\"container\">
     </div>";
   echo $card;
   }
-
-  echo "</div>
-      <div class=\"col\">
-
+  ?>
+    </div>
+      <div class="col">
+      <?php include 'postButton.php';?>
       </div>
     </div>
   </div>"
-?>
-<?php include 'footer.php'; ?>
+  <?php include 'footer.php'; ?>
 </body>
 </html>

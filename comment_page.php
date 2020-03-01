@@ -39,9 +39,7 @@ include 'published.php';
       
     </div>
     <div class="col-3">
-    <div class="card-body">
-           <a href="/askform.php" class="btn btn-primary">Ask a question</a>
-         </div>
+    <?php include 'postButton.php';?>
     </div>
   </div>
   </div>
