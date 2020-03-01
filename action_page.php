@@ -25,21 +25,11 @@ include 'published.php';
     </div>
     <div class="col-8">
     <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (empty($name)) {
-        ?><h3>Name is empty</h3><?php
+    include 'unfilled.php';
+    if (empty($title)) {
+      echo "<h3>Title is empty</h3>";
     }
-    else if (empty($title)) {
-        ?><h3>Title is empty</h3><?php
-    }
-    else if (empty($body)) { 
-        ?><h3>Body is empty</h3><?php
-    }
-    else{ ?>
-    <h3><?php echo $name ?>, your question was <?php echo $response ?> </h3>
-    <?php
-} 
-}?>
+    ?>
       
     </div>
     <div class="col-3">

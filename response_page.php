@@ -11,9 +11,9 @@
 include 'server_conn.php';
 include 'header.php';
 include 'userIdQuery.php';
-$answer = $_POST['answer'];
+$body = $_POST['answer'];
 $tsql= "INSERT INTO Posts(Body, CreationDate, LastActivityDate, LastEditDate, OwnerUserId, ParentId, PostTypeId, Score, ViewCount)
-VALUES('$answer', getdate(), getdate(), getdate(), '$userId', '$postId', 2, 0, 0);";
+VALUES('$body', getdate(), getdate(), getdate(), '$userId', '$postId', 2, 0, 0);";
 include 'published.php';
 ?>
 
@@ -23,20 +23,7 @@ include 'published.php';
 
     </div>
     <div class="col-8">
-    <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (empty($name)) {
-            ?><h3>Name is empty</h3><?php
-        }   
-        if (empty($answer)) {
-            ?><h3>Answer is empty</h3><?php
-        }
-        else{ ?>
-    <h3><?php echo $name ?>, your answer was <?php echo $response ?> </h3>
-    <?php
-        } 
-    }?>
-      
+    <?php include 'unfilled.php';?>
     </div>
     <div class="col-3">
     <?php include 'postButton.php';?>
