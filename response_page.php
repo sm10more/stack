@@ -10,26 +10,11 @@
   <?php
 include 'server_conn.php';
 include 'header.php';
-parse_str($_SERVER['QUERY_STRING']);
-$name = $_POST['name'];
+include 'userIdQuery.php';
 $answer = $_POST['answer'];
-$asql = "SELECT Id
-FROM Users
-WHERE DisplayName = '$name';";
-echo $asql;
-if (!$getId = sqlsrv_query($conn, $asql)){
-  die(print_r(sqlsrv_errors(), true));
-}
-$row = sqlsrv_fetch_array($getId, SQLSRV_FETCH_ASSOC);
-$ownerId = $row['Id'];
 $tsql= "INSERT INTO Posts(Body, CreationDate, LastActivityDate, LastEditDate, OwnerUserId, ParentId, PostTypeId, Score, ViewCount)
-VALUES('$answer', getdate(), getdate(), getdate(), '$ownerId', '$postId', 2, 0, 0);";
-if ($getResults= sqlsrv_query($conn, $tsql)){
-    $response = "published";
-}
-else{
-    $response = "unpublished";
-}
+VALUES('$answer', getdate(), getdate(), getdate(), '$userId', '$postId', 2, 0, 0);";
+include 'published.php';
 ?>
 
 <div class="container">

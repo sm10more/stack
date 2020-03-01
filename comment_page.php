@@ -10,23 +10,11 @@
   <?php
 include 'server_conn.php';
 include 'header.php';
-parse_str($_SERVER['QUERY_STRING']);
-$name = $_POST['name'];
+include 'userIdQuery.php';
 $comment = $_POST['comment'];
-$asql = "SELECT Id
-FROM Users
-WHERE DisplayName = '$name';";
-$getId = sqlsrv_query($conn, $asql);
-$row = sqlsrv_fetch_array($getId, SQLSRV_FETCH_ASSOC);
-$userId = $row['Id'];
 $tsql= "INSERT INTO Comments(CreationDate, Text, PostId, UserId)
 VALUES(getdate(), '$comment', '$answerId', '$userId');";
-if ($getResults= sqlsrv_query($conn, $tsql)){
-    $response = "published";
-}
-else{
-  die(print_r(sqlsrv_errors(), true));
-}
+include 'published.php';
 ?>
 
 <div class="container">
