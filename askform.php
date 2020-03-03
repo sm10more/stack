@@ -24,7 +24,7 @@
       <label for="tg">Tags: <br> <small>Add up to 5 tags to describe what your question is about</small></label>
       <input type="tags" class="form-control" id="tg" placeholder="e.g (Objective-C swift windows)" name="tg">
     </div>
-    <button type="submit" class="btn btn-primary"><small>Review your question</small></button>
+    <button id="myAnchor" onclick="sendForm(event)" class="btn btn-primary"><small>Review your question</small></button>
   </form>
 </div>
     </div>
@@ -33,5 +33,14 @@
     </div>
   </div>
   <?php include 'footer.php'; ?>
+  <script>
+   function sendForm(event){
+    event.preventDefault();
+    let h1 = document.createElement('h1');
+    let variab = document.createTextNode('Tata are mere');
+    h1.appendChild(variab);
+    document.body.insertBefore(h1, document.querySelector('col'));
+   }
+  </script>
 </body>
 </html>

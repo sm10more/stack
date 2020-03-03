@@ -98,16 +98,19 @@
                     echo $comm;
                     }
                     ?>
-                    <button type="button" onclick="document.getElementById('commentform').style.display='block'"><small>add a comment</small></button>
+                    
                   <div class="container">
-                    <form id="commentform" style="display:none" action="/comment_page.php?answerId=<?php echo $ansId ?>" method="post">
+                    <div class="replybutton btn4 like" style="">
+                      <span class="btn reply" id="replyb"><small>add a comment</small></span>
+                    </div>
+                    <form class="form reply" style="display:none" action="/comment_page.php?answerId=<?php echo $ansId ?>" method="post">
                       <div class="form-group">
                         <label for="name"><small>Name:</small></label>
                         <input type="username" class="form-control" id="name" placeholder="e.g. John Doe" name="name">
                       </div>
                       <div class="form-group">
                         <label for="comment"><small>add a comment</small> </label>
-                        <input type="comm" class="form-control" id="comment" placeholder="" name="comment">
+                        <input type="comm" class="form-control" id="comment" placeholder="your comment here" name="comment">
                       </div>
                         <button type="submit" class="btn btn-primary"><small>Post your comment</small></button>
                       </form>
@@ -138,5 +141,12 @@
      </div>
    </div>
    <?php include 'footer.php'; ?>
+   <script>
+   $(document).ready(function() {
+  $('.replybutton').click(function() {
+    $(this).next('.reply').toggle();
+  });
+});
+   </script>
    </body>
 </html> 
