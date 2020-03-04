@@ -5,8 +5,8 @@
       
     </div>
     <div class="col-10">
-    <div class="container">
-  <h2>Ask a public question </h2>
+    <div id="ask" class="container">
+    <h2 id="so">Ask a public question </h2>
   <form action="/action_page.php" method="post">
     <div class="form-group">
       <label for="title">Title: <br> <small>Be specific and imagine you’re asking a question to another person</small></label>
@@ -36,11 +36,14 @@
   <script>
    function sendForm(event){
     event.preventDefault();
-    let h1 = document.createElement('h1');
-    let variab = document.createTextNode('Tata are mere');
-    h1.appendChild(variab);
-    document.body.insertBefore(h1, document.querySelector('col'));
-   }
-  </script>
+   let para = document.createElement('h1');
+    let node = document.createTextNode('Tata are mere');
+    para.appendChild(node);
+    let element = document.getElementById("ask");
+    let child = document.getElementById("so");
+    element.insertBefore(para, child);
+  }
+    </script>
 </body>
+
 </html>
